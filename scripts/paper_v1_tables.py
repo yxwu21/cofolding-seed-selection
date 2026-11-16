@@ -209,7 +209,7 @@ def robustness_outputs(t: Path, out: Path, macros: dict) -> None:
         rows.append(r"\addlinespace")
     (out / "table_losssweep.tex").write_text("\n".join([
         r"\begin{tabular}{lrrrrlll}", r"\toprule",
-        r"Method & Loss limit & $\tau$ & Saving, \% & Positive loss & Signed loss $\pm$ SE & Success loss, pts $\pm$ SE & Stop at 1 / run all 5, \% \\",
+        r"Method & MPQS limit & $\tau$ & Saving, \% & MPQS & Signed loss $\pm$ SE & Success loss, pts $\pm$ SE & Stop at 1 / run all 5, \% \\",
         r"\midrule", *rows[:-1], r"\bottomrule", r"\end{tabular}", ""]))
     # Table S5: RMSD endpoint
     rows = []
@@ -317,9 +317,9 @@ def main() -> None:
         ]) + r" \\")
     (out / "table_stopping.tex").write_text("\n".join([
         r"\begin{tabular}{lrrlrllll}", r"\toprule",
-        r" & & \multicolumn{5}{c}{Confidence stop (pre-specified $\tau$)} & \multicolumn{2}{c}{Signed loss, fixed budget} \\",
+        r" & & \multicolumn{5}{c}{Confidence stop (development-selected $\tau$)} & \multicolumn{2}{c}{Signed loss, fixed budget} \\",
         r"\cmidrule(lr){3-7}\cmidrule(lr){8-9}",
-        r"Method & Test & $\tau$ & Mean seeds $\pm$ SE & Saving, \% & Positive loss $\pm$ SE & Signed loss $\pm$ SE & 1 seed $\pm$ SE & 2 seeds $\pm$ SE \\",
+        r"Method & Test & $\tau$ & Mean seeds $\pm$ SE & Saving, \% & MPQS $\pm$ SE & Signed loss $\pm$ SE & 1 seed $\pm$ SE & 2 seeds $\pm$ SE \\",
         r"\midrule", *rows, r"\bottomrule", r"\end{tabular}", ""]))
 
     # ---------------------------------------------------------------- Table 3
@@ -365,7 +365,7 @@ def main() -> None:
             for m in ORDER]
     (out / "table_coverage.tex").write_text("\n".join([
         r"\begin{tabular}{lrrrrrrr}", r"\toprule",
-        r"Method & In table & Labelled & Complete & RMSD-evaluable & Dev & Test & Clusters \\",
+        r"Method & In table & Labeled & Complete & RMSD-evaluable & Dev & Test & Clusters \\",
         r"\midrule", *rows, r"\bottomrule", r"\end{tabular}", ""]))
 
     # ---------------------------------------------------------------- macros

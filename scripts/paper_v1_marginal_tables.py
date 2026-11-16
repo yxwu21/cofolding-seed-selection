@@ -146,7 +146,7 @@ def main() -> None:
         rows.append(" & ".join([LABELS[mm], *vals]) + r" \\")
     (out / "table_rule_tiers.tex").write_text("\n".join([
         r"\begin{tabular}{lrrrrrr}", r"\toprule",
-        r" & \multicolumn{3}{c}{Mean seeds} & \multicolumn{3}{c}{Positive loss} \\",
+        r" & \multicolumn{3}{c}{Mean seeds} & \multicolumn{3}{c}{MPQS} \\",
         r"\cmidrule(lr){2-4}\cmidrule(lr){5-7}",
         r"Method & Low & Medium & High & Low & Medium & High \\", r"\midrule",
         *rows, r"\bottomrule", r"\end{tabular}", ""]))
