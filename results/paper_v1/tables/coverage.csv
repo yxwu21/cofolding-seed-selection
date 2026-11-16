@@ -1,0 +1,8 @@
+method,label,systems_in_table,systems_with_proper_labels,complete_systems,rmsd_evaluable_systems,dev,test,clusters,max_score_span_within_candidate,multi_cluster_systems
+af3,AF3,2430,2408,2273,2244,1206,1067,902,0.0,0
+af3_no_template,AF3 (no templates),2431,2410,2274,2248,1212,1062,905,0.0,0
+boltz,Boltz-1,2187,2119,1819,1819,1034,785,707,0.0,0
+boltz1x,Boltz-1x,2137,2085,1668,1651,952,716,641,0.0,0
+boltz2,Boltz-2,878,843,806,806,492,314,315,0.0,0
+chai,Chai-1,2317,2291,2137,2137,1135,1002,852,0.0,0
+protenix,Protenix,2354,2321,2239,2239,1199,1040,875,0.0,0

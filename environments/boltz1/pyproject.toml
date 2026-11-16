@@ -1,0 +1,9 @@
+[project]
+name = "cofoldpilot-boltz1"
+version = "0.1.0"
+description = "Boltz-1 inference environment for E25 amendment 1: the Runs N' Poses version 0.4.1."
+requires-python = "==3.12.*"
+dependencies = ["boltz==0.4.1", "torch==2.6.0"]
+
+[tool.uv]
+package = false

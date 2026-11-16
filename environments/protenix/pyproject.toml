@@ -1,0 +1,9 @@
+[project]
+name = "cofoldpilot-protenix"
+version = "0.1.0"
+description = "Protenix inference environment for E25 (seed extension v2): the Runs N' Poses version 0.3.4 (pins torch 2.3.1)."
+requires-python = "==3.10.*"
+dependencies = ["protenix==0.3.4", "setuptools==69.5.1"]
+
+[tool.uv]
+package = false

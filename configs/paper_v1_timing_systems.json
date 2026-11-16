@@ -1,0 +1,139 @@
+{
+  "rule": "Deterministic rule: test-split Chai systems with the complete 5x5 design whose public RNP input has exactly one protein sequence and one SMILES. For each target protein length L in TARGET_LENGTHS (kept <= 600 residues so the padded token count stays within 768 on a 48 GB GPU), take the eligible system whose length is closest to L (ties: lexicographically smallest system id), without reuse. Timing uses the system's first N_BATCHES archived RNP seeds (ascending). Ground-truth structures are never read.",
+  "eligible_pool": 268,
+  "systems": [
+    {
+      "target_length": 100,
+      "system_id": "8chk__1__1.A__1.D",
+      "chain": "1.A",
+      "length": 107,
+      "smiles": "C=C[C@H]1CN(Cc2ccccn2)C(=O)[C@@H]2CCC[C@H]1N2S(=N)(=O)c1cc(Cl)cc(Cl)c1",
+      "rnp_seeds": [
+        2001,
+        3304,
+        5108,
+        7072,
+        8822
+      ],
+      "timing_seeds": [
+        2001,
+        3304,
+        5108
+      ]
+    },
+    {
+      "target_length": 175,
+      "system_id": "7slz__1__1.A__1.B",
+      "chain": "1.A",
+      "length": 167,
+      "smiles": "O=C(CNCc1cc2ccccc2[nH]1)NC1CCC(c2nc3ccccc3[nH]2)CC1",
+      "rnp_seeds": [
+        1861,
+        2764,
+        5141,
+        8152,
+        8191
+      ],
+      "timing_seeds": [
+        1861,
+        2764,
+        5141
+      ]
+    },
+    {
+      "target_length": 250,
+      "system_id": "8e1o__1__1.A__1.D",
+      "chain": "1.A",
+      "length": 250,
+      "smiles": "CNC(=O)Cc1cccc(CNC(=O)c2cc(/C=C/C3CCC(C(F)(F)F)CC3)c(OC)cn2)c1",
+      "rnp_seeds": [
+        4238,
+        4835,
+        5655,
+        6905,
+        9137
+      ],
+      "timing_seeds": [
+        4238,
+        4835,
+        5655
+      ]
+    },
+    {
+      "target_length": 325,
+      "system_id": "7dg4__1__1.A__1.B",
+      "chain": "1.A",
+      "length": 324,
+      "smiles": "COc1ccc2nc3ccc(OC)cc3c(SCC3CCNCC3)c2c1",
+      "rnp_seeds": [
+        443,
+        3131,
+        7631,
+        9143,
+        9702
+      ],
+      "timing_seeds": [
+        443,
+        3131,
+        7631
+      ]
+    },
+    {
+      "target_length": 400,
+      "system_id": "7o7j__1__1.A__1.B",
+      "chain": "1.A",
+      "length": 404,
+      "smiles": "CCN1CCN(Cc2ccc(Nc3ncc(F)c(-c4cc(F)c5nc(C)n(C(C)C)c5c4)n3)nc2)CC1",
+      "rnp_seeds": [
+        3640,
+        3665,
+        3942,
+        4985,
+        7233
+      ],
+      "timing_seeds": [
+        3640,
+        3665,
+        3942
+      ]
+    },
+    {
+      "target_length": 500,
+      "system_id": "8cju__1__1.A__1.B",
+      "chain": "1.A",
+      "length": 499,
+      "smiles": "CC(C)[C@H](O)[C@@H](O)C(=O)NP(=O)(O)O[C@@H]1C[C@H](O)[C@H](n2cnc3c(NP(=O)(O)O[C@@H]4[C@@H](O)[C@H](O)[C@@H](CO)O[C@@H]4O)ncnc32)O1",
+      "rnp_seeds": [
+        1201,
+        4178,
+        4552,
+        4959,
+        7378
+      ],
+      "timing_seeds": [
+        1201,
+        4178,
+        4552
+      ]
+    },
+    {
+      "target_length": 600,
+      "system_id": "7qfe__1__1.A__1.D",
+      "chain": "1.A",
+      "length": 585,
+      "smiles": "Cc1ccc(C)c(OCCCC(C)(C)C(=O)O)c1",
+      "rnp_seeds": [
+        763,
+        6916,
+        7008,
+        9814,
+        9961
+      ],
+      "timing_seeds": [
+        763,
+        6916,
+        7008
+      ]
+    }
+  ]
+}
