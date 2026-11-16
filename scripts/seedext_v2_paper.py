@@ -7,7 +7,7 @@ results/seedext_v2/paper/:
 
   seedext_models.tex               LaTeX macros (\\Xt...) for the text
   table_seedext_models.tex         one row per model: levels at 5 and 20 seeds, 5-to-20 changes
-                                   (mean +/- SE), the pre-registered reading and k*
+                                   (mean +/- SE) and k*
   table_seedext_models_tiers.tex   the same changes and k* per design confidence tier
   table_seedext_models_timing.tex  time per seed by padded input size
   fig_seedext_models.{pdf,png}     (a-d) mean LDDT-PLI of the returned and the best available pose
@@ -127,16 +127,15 @@ def write_tables(data: dict, out: Path) -> None:
         rows.append(" & ".join([
             name, f"{s['n_complete']}/{s['n_systems']}",
             f(level(d, "ret_q", "pool", 5)), f(level(d, "ret_q", "pool", 20)), msd(s["primary"]["delta_ret_5_20"], se_r),
-            s["primary"]["reading"],
             f(level(d, "orc_q", "pool", 5)), f(level(d, "orc_q", "pool", 20)), msd(s["delta_5_20_orc_q"]["pool"][0], se_o),
             f"{f(level(d, 'orc_q', 'pool', 5) - level(d, 'ret_q', 'pool', 5))} $\\to$ "
             f"{f(level(d, 'orc_q', 'pool', 20) - level(d, 'ret_q', 'pool', 20))}",
             kstar_text(kstar_row(d, "ret_q", "pool")), kstar_text(kstar_row(d, "orc_q", "pool"))]) + r" \\")
     (out / "table_seedext_models.tex").write_text("\n".join([
-        r"\begin{tabular}{lrrrlcrrlccc}", r"\toprule",
-        r" & & \multicolumn{4}{c}{Returned (native top-1)} & \multicolumn{3}{c}{Best available (oracle)} & & \multicolumn{2}{c}{$k^*$} \\",
-        r"\cmidrule(lr){3-6}\cmidrule(lr){7-9}\cmidrule(lr){11-12}",
-        r"Model & Complete & $k{=}5$ & $k{=}20$ & $\Delta_{5\to20}$ (mean $\pm$ SE) & Reading & $k{=}5$ & $k{=}20$ & "
+        r"\begin{tabular}{lrrrlrrlccc}", r"\toprule",
+        r" & & \multicolumn{3}{c}{Returned (native top-1)} & \multicolumn{3}{c}{Best available (oracle)} & & \multicolumn{2}{c}{$k^*$} \\",
+        r"\cmidrule(lr){3-5}\cmidrule(lr){6-8}\cmidrule(lr){10-11}",
+        r"Model & Complete & $k{=}5$ & $k{=}20$ & $\Delta_{5\to20}$ (mean $\pm$ SE) & $k{=}5$ & $k{=}20$ & "
         r"$\Delta_{5\to20}$ (mean $\pm$ SE) & Gap $5\to20$ & Ret. & Best \\",
         r"\midrule", *rows, r"\bottomrule", r"\end{tabular}", ""]))
 
